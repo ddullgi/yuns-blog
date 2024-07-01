@@ -4,6 +4,7 @@ import type { ComputedFields } from "contentlayer/source-files";
 type Doc = {
 	_raw: {
 		flattenedPath: string;
+		sourceFileName: string;
 		// 기타 속성들 추가 가능
 	};
 	// 다른 문서 속성들 추가 가능
@@ -15,9 +16,9 @@ const computedFields: ComputedFields<"Post"> = {
 		type: "string",
 		resolve: (doc: Doc) => `/${doc._raw.flattenedPath}`,
 	},
-	slugAsParams: {
+	fileName: {
 		type: "string",
-		resolve: (doc: Doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+		resolve: (doc: Doc) => doc._raw.sourceFileName.split(".")[0],
 	},
 	category: {
 		type: "string",
