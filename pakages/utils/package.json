@@ -1,0 +1,16 @@
+{
+	"name": "@yuns-blog/utils",
+	"scripts": {},
+	"exports": {
+		"./function": {
+			"import": {
+				"types": "./dist/function/index.d.mts",
+				"default": "./dist/function/index.mjs"
+			}
+		}
+	},
+	"devDependencies": {
+		"typescript": "^5",
+		"@yuns-blog/tsconfig": "workspace:*"
+	}
+}
