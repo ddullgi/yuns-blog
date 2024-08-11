@@ -17,7 +17,8 @@
 			"**/.next/*",
 			"**/node_modules/*",
 			"*storybook.log",
-			"**/storybook-static/*"
+			"**/storybook-static/*",
+			"**/.contentlayer/*"
 		]
 	}
 }
