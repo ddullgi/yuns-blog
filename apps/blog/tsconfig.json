@@ -1,6 +1,7 @@
 {
 	"extends": "@yuns-blog/tsconfig/nextjs.json",
 	"compilerOptions": {
+		"baseUrl": ".",
 		"plugins": [
 			{
 				"name": "next"
