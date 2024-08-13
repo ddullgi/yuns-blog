@@ -20,10 +20,6 @@ const computedFields: ComputedFields<"Post"> = {
 		type: "string",
 		resolve: (doc: Doc) => doc._raw.sourceFileName.split(".")[0],
 	},
-	category: {
-		type: "string",
-		resolve: (doc: Doc) => doc._raw.flattenedPath.split("/")[1],
-	},
 };
 
 export const Post = defineDocumentType(() => ({
@@ -40,6 +36,11 @@ export const Post = defineDocumentType(() => ({
 		},
 		thumbnail: {
 			type: "string",
+			required: false,
+		},
+		categories: {
+			type: "list",
+			of: { type: "string" },
 			required: false,
 		},
 		writeDate: {
