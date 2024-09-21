@@ -1,9 +1,7 @@
-import { withContentlayer } from "next-contentlayer";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	swcMinify: true,
+	output: "standalone",
+	transpilePackages: ["next-mdx-remote"],
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig;
