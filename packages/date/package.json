@@ -1,6 +1,8 @@
 {
 	"name": "@yuns-blog/date",
-	"scripts": {},
+	"scripts": {
+		"build": "tsup"
+	},
 	"exports": {
 		"./sort-date": {
 			"import": {
@@ -15,7 +17,8 @@
 	},
 	"devDependencies": {
 		"@yuns-blog/tsconfig": "workspace:*",
-		"typescript": "^5",
-		"dayjs": "^1.11.13"
+		"dayjs": "^1.11.13",
+		"tsup": "^8.3.0",
+		"typescript": "^5"
 	}
 }

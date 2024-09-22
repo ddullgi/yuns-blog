@@ -1,11 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ENVIRONMENT } from "@/shared/environment/index";
-import { compileMDX } from "next-mdx-remote/rsc";
 import {
 	isFirstDateBeforeSecond,
 	sortByDateDescending,
-} from "../lib/utils/time.util";
+} from "@yuns-blog/date/sort-date";
+import { compileMDX } from "next-mdx-remote/rsc";
 import type { Frontmatter, Post } from "./post.type";
 
 const postsDirectory = path.join(process.cwd(), "posts");
