@@ -1,0 +1,21 @@
+{
+	"name": "@yuns-blog/date",
+	"scripts": {},
+	"exports": {
+		"./sort-date": {
+			"import": {
+				"types": "./dist/sort-date.d.mts",
+				"default": "./dist/sort-date.mjs"
+			},
+			"require": {
+				"types": "./dist/sort-date.d.ts",
+				"default": "./dist/sort-date.js"
+			}
+		}
+	},
+	"devDependencies": {
+		"@yuns-blog/tsconfig": "workspace:*",
+		"typescript": "^5",
+		"dayjs": "^1.11.13"
+	}
+}
