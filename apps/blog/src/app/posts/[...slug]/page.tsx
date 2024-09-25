@@ -1,4 +1,5 @@
 import { getPost } from "@/entities/post/model/post";
+import { MdxRemote } from "@/entities/post/ui/mdx/mdx-remote";
 import { redirect } from "next/navigation";
 
 type PostProps = {
@@ -11,5 +12,5 @@ export default async function Post(params: PostProps) {
 	const slug = params.params.slug;
 	const post = await getPost(slug);
 	if (!post) return redirect("/");
-	return <div>post 페이지</div>;
+	return <MdxRemote source={post.content} />;
 }
