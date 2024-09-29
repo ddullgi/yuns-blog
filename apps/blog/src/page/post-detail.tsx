@@ -7,8 +7,8 @@ type PostPageProps = {
 
 export default function PostDetailPage({ post }: PostPageProps) {
 	return (
-		<main>
+		<section className="max-w-2xl">
 			<MdxRemote source={post.content} />
-		</main>
+		</section>
 	);
 }

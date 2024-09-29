@@ -10,7 +10,7 @@ interface MdxRemoteProps {
 }
 export const MdxRemote = ({ source }: MdxRemoteProps) => {
 	return (
-		<article className="border-b pb-36 prose max-w-none border-seo-300 mt-4">
+		<article className="prose">
 			<MDXRemote
 				source={source}
 				components={MDXComponents}
@@ -32,7 +32,7 @@ export const MdxRemote = ({ source }: MdxRemoteProps) => {
 							[
 								rehypePrettyCode,
 								{
-									theme: "github-dark",
+									theme: "nord",
 									//@ts-expect-error
 									onVisitLine(node) {
 										if (node.children.length === 0) {
