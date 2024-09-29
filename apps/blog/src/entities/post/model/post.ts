@@ -6,14 +6,18 @@ import {
 	sortByDateDescending,
 } from "@yuns-blog/date/sort-date";
 import { compileMDX } from "next-mdx-remote/rsc";
-import type { Frontmatter, Post } from "./post.type";
+import type {
+	FrontmatterType,
+	PostType,
+	PostWithFrontmatterType,
+} from "./post.type";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-const readDirectory = (directory: string): Pick<Post, "filePath">[] => {
+const readDirectory = (directory: string): Pick<PostType, "filePath">[] => {
 	return fs
 		.readdirSync(directory, { withFileTypes: true })
-		.reduce<Pick<Post, "filePath">[]>((posts, file) => {
+		.reduce<Pick<PostType, "filePath">[]>((posts, file) => {
 			const fullPath = path.join(directory, file.name);
 			if (file.isDirectory()) {
 				return posts.concat(readDirectory(fullPath));
@@ -30,7 +34,10 @@ const readDirectory = (directory: string): Pick<Post, "filePath">[] => {
 		}, []);
 };
 
-const findPostFile = (directory: string, filePath: string[]): Post | null => {
+const findPostFile = (
+	directory: string,
+	filePath: string[],
+): PostType | null => {
 	const fullPath = path.join(directory, ...filePath);
 	const fileExtensions = [".md", ".mdx"];
 	for (const ext of fileExtensions) {
@@ -45,7 +52,7 @@ const findPostFile = (directory: string, filePath: string[]): Post | null => {
 
 export const getPost = async (
 	filePath: string[],
-): Promise<(Post & Frontmatter) | null> => {
+): Promise<PostWithFrontmatterType | null> => {
 	const post = findPostFile(postsDirectory, filePath);
 
 	if (!post) return null;
@@ -60,9 +67,9 @@ export const getCategoryPosts = async (filePath: string) => {
 		readDirectory(fullPath).map((path) => getPost(path.filePath)),
 	);
 
-	const validPosts = posts.filter((post) => post !== null) as Array<
-		Post & Frontmatter
-	>;
+	const validPosts = posts.filter(
+		(post) => post !== null,
+	) as Array<PostWithFrontmatterType>;
 
 	const today = new Date().toISOString();
 
@@ -84,8 +91,10 @@ export const getCategoryPosts = async (filePath: string) => {
 	return filteredByReleaseDatePosts;
 };
 
-export const getFrontmatter = async (source: string): Promise<Frontmatter> => {
-	const { frontmatter } = await compileMDX<Frontmatter>({
+export const getFrontmatter = async (
+	source: string,
+): Promise<FrontmatterType> => {
+	const { frontmatter } = await compileMDX<FrontmatterType>({
 		source,
 		options: { parseFrontmatter: true },
 	});
@@ -97,9 +106,9 @@ export const getAllPosts = async () => {
 		readDirectory(postsDirectory).map((path) => getPost(path.filePath)),
 	);
 
-	const validPosts = posts.filter((post) => post !== null) as Array<
-		Post & Frontmatter
-	>;
+	const validPosts = posts.filter(
+		(post) => post !== null,
+	) as Array<PostWithFrontmatterType>;
 
 	const today = new Date().toISOString();
 
