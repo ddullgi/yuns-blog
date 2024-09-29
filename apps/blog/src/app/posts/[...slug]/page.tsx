@@ -1,4 +1,4 @@
-import { getPost } from "@/entities/post/model/post";
+import { getAllPosts, getPost } from "@/entities/post/model/post";
 import PostDetailPage from "@/page/post-detail";
 import { redirect } from "next/navigation";
 
@@ -8,10 +8,15 @@ type PostProps = {
 	};
 };
 
-export default async function Post(params: PostProps) {
-	const slug = params.params.slug;
+export default async function Post({ params: { slug } }: PostProps) {
 	const post = await getPost(slug);
 	if (!post) return redirect("/");
 
 	return <PostDetailPage post={post} />;
 }
+
+export const generateStaticParams = async () => {
+	return (await getAllPosts()).map((post) => ({
+		slug: post.filePath,
+	}));
+};
