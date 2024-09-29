@@ -1,4 +1,4 @@
-export type Post = {
+export type PostType = {
 	content: string;
 	filePath: string[];
 };
@@ -6,7 +6,7 @@ export type Post = {
 export const CATEGORIES_LIST = ["react", "nextjs", "frontend"] as const;
 export type CategoriesType = (typeof CATEGORIES_LIST)[number];
 
-export interface Frontmatter {
+export interface FrontmatterType {
 	title: string;
 	description: string;
 	thumbnail: string;
@@ -15,3 +15,5 @@ export interface Frontmatter {
 	releaseDate: string;
 	canView: boolean;
 }
+
+export type PostWithFrontmatterType = PostType & FrontmatterType;
