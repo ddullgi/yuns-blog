@@ -26,6 +26,7 @@
 		"@types/react-dom": "^18",
 		"@yuns-blog/tailwind-config": "workspace:*",
 		"@yuns-blog/tsconfig": "workspace:*",
+		"@yuns-blog/ui": "workspace:*",
 		"next-mdx-remote": "^5.0.0",
 		"postcss": "^8.4.41",
 		"tailwindcss": "^3.4.6",
