@@ -20,6 +20,16 @@
 				"types": "./dist/separator.d.ts",
 				"default": "./dist/separator.js"
 			}
+		},
+		"./spacing": {
+			"import": {
+				"types": "./dist/separator.d.mts",
+				"default": "./dist/separator.mjs"
+			},
+			"require": {
+				"types": "./dist/separator.d.ts",
+				"default": "./dist/separator.js"
+			}
 		}
 	},
 	"files": ["dist"],
