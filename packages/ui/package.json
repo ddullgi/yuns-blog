@@ -60,6 +60,7 @@
 		"@yuns-blog/tailwind-config": "workspace:*",
 		"@yuns-blog/tsconfig": "workspace:*",
 		"autoprefixer": "^10.4.20",
+		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"postcss": "^8.4.41",
 		"storybook": "8.3.5",
