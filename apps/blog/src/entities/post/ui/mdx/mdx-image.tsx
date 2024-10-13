@@ -1,3 +1,4 @@
+import { cn } from "@/shared/utils/cn";
 import Image from "next/image";
 import type { HTMLProps } from "react";
 
@@ -31,7 +32,7 @@ export function MdxImage(props: HTMLProps<HTMLImageElement>) {
 				aria-label={props.alt || ""}
 				crossOrigin="anonymous"
 				placeholder="empty"
-				className={` object-cover ${props.className}`}
+				className={cn(`object-cover ${props.className}`)}
 			/>
 		);
 	}

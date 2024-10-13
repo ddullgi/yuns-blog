@@ -1,3 +1,4 @@
+import { cn } from "@/shared/utils/cn";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -10,7 +11,7 @@ interface MdxRemoteProps {
 }
 export const MdxRemote = ({ source }: MdxRemoteProps) => {
 	return (
-		<article className="prose">
+		<article className={cn("prose")}>
 			<MDXRemote
 				source={source}
 				components={MDXComponents}

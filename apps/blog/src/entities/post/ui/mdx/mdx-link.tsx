@@ -1,3 +1,4 @@
+import { cn } from "@/shared/utils/cn";
 import Link from "next/link";
 import type { HTMLProps } from "react";
 
@@ -19,7 +20,7 @@ export const MdxLink = (props: HTMLProps<HTMLAnchorElement>) => {
 	return (
 		<Link
 			href={href}
-			className={props.className}
+			className={cn(props.className)}
 			target={props.target}
 			title={props.target}
 			rel={props.rel}
