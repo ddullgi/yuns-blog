@@ -10,11 +10,10 @@ type PostPageProps = {
 
 export default function PostDetailPage({ post }: PostPageProps) {
 	return (
-		<section className={cn("max-w-2xl")}>
+		<section className={cn("md:max-w-3xl")}>
 			<PostDetailTitle>{post.title}</PostDetailTitle>
 			<MdxRemote source={post.content} />
 			<Separator />
-			<div>123</div>
 		</section>
 	);
 }

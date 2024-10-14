@@ -11,7 +11,7 @@ interface MdxRemoteProps {
 }
 export const MdxRemote = ({ source }: MdxRemoteProps) => {
 	return (
-		<article className={cn("prose")}>
+		<article className={cn("prose md:max-w-3xl max-w-full")}>
 			<MDXRemote
 				source={source}
 				components={MDXComponents}
