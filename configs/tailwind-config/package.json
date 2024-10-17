@@ -12,8 +12,9 @@
 		}
 	},
 	"devDependencies": {
-		"tailwindcss": "^3.4.6",
+		"@types/node": "^20",
 		"@yuns-blog/tsconfig": "workspace:*",
+		"tailwindcss": "^3.4.6",
 		"typescript": "latest"
 	}
 }

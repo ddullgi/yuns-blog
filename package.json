@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo build",
+		"build:p": "turbo build --filter './packages/*'",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
 		"storybook": "turbo storybook",
