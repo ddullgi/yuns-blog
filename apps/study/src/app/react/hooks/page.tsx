@@ -9,6 +9,9 @@ export default function Page() {
 			<li>
 				<Link href="/react/hooks/customHook">customHook</Link>
 			</li>
+			<li>
+				<Link href="/react/hooks/reactMemo">reactMemo</Link>
+			</li>
 		</ul>
 	);
 }
