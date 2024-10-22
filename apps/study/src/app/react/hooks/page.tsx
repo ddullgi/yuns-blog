@@ -12,6 +12,11 @@ export default function Page() {
 			<li>
 				<Link href="/react/hooks/reactMemo">reactMemo</Link>
 			</li>
+			<li>
+				<Link href="/react/hooks/higherOrderComponent">
+					higherOrderComponent
+				</Link>
+			</li>
 		</ul>
 	);
 }
